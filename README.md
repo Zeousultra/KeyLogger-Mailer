@@ -1,50 +1,47 @@
 # KeyLogger-Mailer
 
 ## Overview
-This project is a simple keylogger that records keystrokes and automatically sends the log file to a specified email address. It is intended for **educational purposes only** and should only be used with the explicit permission of the system owner.
+This project is a Python-based keylogger that logs keystrokes and periodically sends the log file via email. It is designed for educational purposes only and should be used responsibly.
 
 ## Features
-- Logs all keystrokes, including special keys (e.g., Enter, Space, etc.).
-- Saves logs in a uniquely named file based on timestamp.
-- Sends logs to a specified email upon stopping the keylogger.
-- Secure email sending via SMTP with TLS encryption.
+- Logs all keystrokes, including special keys (like space, enter, etc.).
+- Saves logs to a uniquely named text file based on the timestamp of execution.
+- Sends logs via email at a specified interval.
+- Deletes logs after sending (configurable).
+- Secure credential management using environment variables.
 
 ## Ethical Considerations
-🔴 **Use this project responsibly and ethically. Unauthorized use of keyloggers is illegal!**
+- This tool is intended **strictly for educational purposes**.
+- You must obtain **explicit permission** from the system owner before use.
+- Unauthorized use of keyloggers is **illegal and unethical**.
 
 ## Requirements
 - Python 3.x
-- `pynput` library for key logging
-- `smtplib` for email functionality
-- A Gmail account (with App Password enabled for secure login)
+- Required Python libraries:
+  ```bash
+  pip install pynput schedule dotenv
+  ```
 
-### Install Dependencies:
-```sh
-pip install pynput
-```
-
-## Usage
-### 1. Clone the repository:
-```sh
-git clone https://github.com/Zeousultra/KeyLogger-Mailer
-cd KeyLogger-Mailer
-```
-
-### 2. Configure Email Credentials
-Edit `keylogger.py` and replace:
-- `EMAIL_ADDRESS` with your Gmail
-- `EMAIL_PASSWORD` with your **Google App Password**
-- `SEND_TO` with the recipient's email
-
-### 3. Run the keylogger:
-```sh
-python keylogger.py
-```
-Press `ESC` to stop logging and send the email.
+## Setup Instructions
+1. Clone the repository:
+   ```bash
+   git clone github.com/Zeousultra/KeyLogger-Mailer
+   cd KeyLogger-Mailer
+   ```
+2. Set up environment variables in a `.env` file:
+   ```plaintext
+   SENDER_EMAIL=your-email@gmail.com
+   SENDER_PASSWORD=your-email-password
+   RECEIVER_EMAIL=receiver-email@gmail.com
+   ```
+3. Run the keylogger:
+   ```bash
+   python KeyLogger-Mailer.py
+   ```
 
 ## Log Files
-- Logs are saved as `keylog_<timestamp>.txt`
-- Automatically emailed to the specified recipient.
+- Keystrokes are logged in `keylog_<timestamp>.txt`.
+- The file is automatically deleted after being emailed (configurable in the script).
 
 ## Disclaimer
-This project is for **educational and ethical use only**. The creator is **not responsible** for any misuse. Always comply with legal and ethical guidelines.
+Use this project **responsibly and ethically**. The creator is not responsible for misuse. Ensure compliance with local laws and regulations regarding monitoring software.
