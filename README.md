@@ -43,5 +43,10 @@ This project is a Python-based keylogger that logs keystrokes and periodically s
 - Keystrokes are logged in `keylog_<timestamp>.txt`.
 - The file is automatically deleted after being emailed (configurable in the script).
 
+  
+## Customization
+Change the EMAIL_INTERVAL in KeyLogger-Mailer.py to adjust email frequency.
+Set DELETE_LOG_AFTER_EMAIL = False if you want to keep logs after sending.
+
 ## Disclaimer
 Use this project **responsibly and ethically**. The creator is not responsible for misuse. Ensure compliance with local laws and regulations regarding monitoring software.
